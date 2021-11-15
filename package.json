@@ -1,0 +1,35 @@
+{
+  "name": "asa-demo-node",
+  "version": "1.0.0",
+  "description": "An example Node API for handling ASA requests.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privacy/asa-demo-node.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "npx prettier --write .",
+    "test": "mocha webhook/tests/unit/",
+    "create-card": "node scripts/createCard.js",
+    "list-transactions": "node scripts/listTransactions.js",
+    "enroll": "node scripts/enroll.js",
+    "disenroll": "node scripts/disenroll.js",
+    "simulate": "node scripts/simulate.js"
+  },
+  "devDependencies": {
+    "axios": "^0.24.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.4.1",
+    "prompt-sync": "^4.2.0",
+    "yargs": "^17.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/privacy/asa-demo-node/issues"
+  },
+  "homepage": "https://github.com/privacy/asa-demo-node#readme",
+  "directories": {
+    "test": "tests"
+  }
+}

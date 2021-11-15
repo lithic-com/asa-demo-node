@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  An example Node API for handling Auth Stream Access (ASA) requests.
+Globals:
+  Function:
+    Timeout: 3
+    Runtime: nodejs14.x
+
+Resources:
+  ASAWebhookFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: webhook/
+      Handler: app.handler
+      Architectures:
+        - x86_64
+      Events:
+        ASAWebhook:
+          Type: Api
+          Properties:
+            Path: /webhook
+            Method: post
+
+Outputs:
+  ASAWebhookApi:
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/webhook/"
