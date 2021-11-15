@@ -14,7 +14,7 @@ describe("Tests authorization", function () {
       },
     };
     result = authorization.authorize(merchantInfo);
-    expect(result).to.be.equal("APPROVED");
+    expect(result).to.be.equal(authorization.APPROVED_RESULT);
   });
 
   it("rejects disallowed state", async () => {
@@ -25,7 +25,7 @@ describe("Tests authorization", function () {
       },
     };
     result = authorization.authorize(merchantInfo);
-    expect(result).to.be.equal("UNAUTHORIZED_MERCHANT");
+    expect(result).to.be.equal(authorization.UNAUTHORIZED_RESULT);
   });
 
   it("rejects disallowed mcc", async () => {
@@ -36,6 +36,6 @@ describe("Tests authorization", function () {
       },
     };
     result = authorization.authorize(merchantInfo);
-    expect(result).to.be.equal("UNAUTHORIZED_MERCHANT");
+    expect(result).to.be.equal(authorization.UNAUTHORIZED_RESULT);
   });
 });
