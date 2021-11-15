@@ -1,34 +1,36 @@
 [overview]: #overview
-[prerequisites]: #prerequisites
-[local]: #local
+[prerequisites]: #pre-requisites
+[local]: #running-locally
 [deploy]: #deploy
-[logs]: #logs
+[logs]: #application-logs
+[cleanup]: #cleanup
 [scripts]: #scripts
-[enroll]: #enroll
-[simulate]: #simulate
-[authorizeandreturns]: #authorizeandreturns
-[clearingandvoid]: #clearingandvoid
-[listtransactions]: #listtransactions
-[createcard]: #createcard
+[enroll]: #enroll-your-endpoint-in-asa
+[simulate]: #simulate-events
+[authorizeandreturns]: #authorize-and-returns
+[clearingandvoid]: #clearing-and-void
+[listtransactions]: #listing-transactions
+[createcard]: #create-a-card
 [testing]: #testing
 
-# ASA Webhook Example
+# Auth Stream Access (ASA) Node Example Application
 
 ## Table of Contents
 
-- [Overview][overview]
-- [Pre-requisites](prerequisites)
-- [Running locally](local)
-- [Deploying](deploy)
-- [Logs](logs)
-- [Scripts](scripts)
-  - [Enrolling in ASA](enroll)
-  - [Simulate Events](simulate)
-    - [Authorize and Returns](authorizeandreturns)
-    - [Clearing and Void](clearingandvoid)
-  - [List Transactions](listtransactions)
-  - [Create a Card](createcard)
-- [Testing](testing)
+- [Overview](#overview)
+- [Pre-requisites](#pre-requisites)
+- [Running locally](#running-locally)
+- [Deploy](#deploy)
+- [Application Logs](#application-logs)
+- [Cleanup](#cleanup)
+- [Scripts](#scripts)
+  * [Enroll your endpoint in ASA](#enroll-your-endpoint-in-asa)
+  * [Simulate Events](#simulate-events)
+    + [Authorize and Returns](#authorize-and-returns)
+    + [Clearing and Void](#clearing-and-void)
+    + [Listing Transactions](#listing-transactions)
+  * [Create a Card](#create-a-card)
+- [Testing](#testing)
 
 ## Overview
 
