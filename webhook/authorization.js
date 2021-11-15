@@ -1,3 +1,5 @@
+const APPROVED_RESULT = "APPROVED";
+const UNAUTHORIZED_RESULT = "UNAUTHORIZED_MERCHANT";
 // 5933: Pawn shops
 // 5945: Game, Toy and Hobby Shops
 const DISALLOWED_MCCS = ["5933", "5945"];
@@ -73,7 +75,7 @@ const authorizeMerchant = (merchantInfo) => {
 */
 const authorize = (asaRequest) => {
   const isAuthorizedMerchant = authorizeMerchant(asaRequest["merchant"]);
-  return isAuthorizedMerchant ? "APPROVED" : "UNAUTHORIZED_MERCHANT";
+  return isAuthorizedMerchant ? APPROVED_RESULT : UNAUTHORIZED_RESULT;
 };
 
-module.exports = { authorize };
+module.exports = { authorize, APPROVED_RESULT, UNAUTHORIZED_RESULT };
