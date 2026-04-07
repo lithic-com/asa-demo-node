@@ -7,35 +7,35 @@ const VALID_MCC = "5961";
 
 describe("Tests authorization", function () {
   it("approves valid merchant", async () => {
-    const merchantInfo = {
+    const asaRequest = {
       merchant: {
         state: VALID_STATE,
         mcc: VALID_MCC,
       },
     };
-    result = authorization.authorize(merchantInfo);
+    const result = authorization.authorize(asaRequest);
     expect(result).to.be.equal(authorization.APPROVED_RESULT);
   });
 
   it("rejects disallowed state", async () => {
-    const merchantInfo = {
+    const asaRequest = {
       merchant: {
         state: "CT",
         mcc: VALID_MCC,
       },
     };
-    result = authorization.authorize(merchantInfo);
+    const result = authorization.authorize(asaRequest);
     expect(result).to.be.equal(authorization.UNAUTHORIZED_RESULT);
   });
 
   it("rejects disallowed mcc", async () => {
-    const merchantInfo = {
+    const asaRequest = {
       merchant: {
         state: VALID_STATE,
         mcc: "5933",
       },
     };
-    result = authorization.authorize(merchantInfo);
+    const result = authorization.authorize(asaRequest);
     expect(result).to.be.equal(authorization.UNAUTHORIZED_RESULT);
   });
 });

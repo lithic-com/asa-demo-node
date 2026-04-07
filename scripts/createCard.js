@@ -1,31 +1,13 @@
-const axios = require("axios");
 const util = require("./util.js");
 
-const createCard = (apiKey) => {
-  axios
-    .post(
-      "https://sandbox.lithic.com/v1/card",
-      {
-        type: "UNLOCKED",
-      },
-      {
-        headers: {
-          Authorization: `api-key ${apiKey}`,
-          "Content-type": "application/json",
-        },
-      }
-    )
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.log(error.response.data);
-    });
-};
-
-const main = () => {
-  const apiKey = util.readApiKey();
-  createCard(apiKey);
+const main = async () => {
+  const client = util.createClient();
+  try {
+    const card = await client.cards.create({ type: "UNLOCKED" });
+    console.log(card);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 main();
