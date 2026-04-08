@@ -24,12 +24,12 @@
 - [Application Logs](#application-logs)
 - [Cleanup](#cleanup)
 - [Scripts](#scripts)
-  * [Enroll your endpoint in ASA](#enroll-your-endpoint-in-asa)
-  * [Simulate Events](#simulate-events)
-    + [Authorize and Returns](#authorize-and-returns)
-    + [Clearing and Void](#clearing-and-void)
-    + [Listing Transactions](#listing-transactions)
-  * [Create a Card](#create-a-card)
+  - [Enroll your endpoint in ASA](#enroll-your-endpoint-in-asa)
+  - [Simulate Events](#simulate-events)
+    - [Authorize and Returns](#authorize-and-returns)
+    - [Clearing and Void](#clearing-and-void)
+    - [Listing Transactions](#listing-transactions)
+  - [Create a Card](#create-a-card)
 - [Testing](#testing)
 
 ## Overview

@@ -3,7 +3,6 @@
 const app = require("../../app.js");
 const chai = require("chai");
 const expect = chai.expect;
-var context;
 
 const SAMPLE_ASA_REQUEST = {
   token: "7842e70e-2b17-47ca-8541-869636bedf6a",
@@ -55,17 +54,18 @@ const SAMPLE_ASA_REQUEST = {
 
 describe("Tests index", function () {
   it("returns valid auth response", async () => {
-    const event = {};
-    event["body"] = JSON.stringify(SAMPLE_ASA_REQUEST);
-    const result = await app.handler(event, context);
+    const event = {
+      body: JSON.stringify(SAMPLE_ASA_REQUEST),
+    };
+    const result = await app.handler(event, {});
 
     expect(result).to.be.an("object");
     expect(result.statusCode).to.equal(200);
-    expect(result.body).to.be.an("string");
+    expect(result.body).to.be.a("string");
 
-    let response = JSON.parse(result.body);
+    const response = JSON.parse(result.body);
     expect(response).to.be.an("object");
-    expect(response["result"]).to.be.equal("APPROVED");
-    expect(response["token"]).to.be.equal(SAMPLE_ASA_REQUEST["token"]);
+    expect(response.result).to.equal("APPROVED");
+    expect(response.token).to.equal(SAMPLE_ASA_REQUEST.token);
   });
 });

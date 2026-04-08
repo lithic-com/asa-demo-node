@@ -18,12 +18,11 @@
     "simulate": "node scripts/simulate.js"
   },
   "devDependencies": {
-    "axios": "^0.24.0",
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1",
-    "prettier": "^2.4.1",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "prettier": "^3.8.1",
     "prompt-sync": "^4.2.0",
-    "yargs": "^17.2.1"
+    "yargs": "^18.0.0"
   },
   "bugs": {
     "url": "https://github.com/privacy/asa-demo-node/issues"
@@ -31,5 +30,8 @@
   "homepage": "https://github.com/privacy/asa-demo-node#readme",
   "directories": {
     "test": "tests"
+  },
+  "dependencies": {
+    "lithic": "^0.135.0"
   }
 }
